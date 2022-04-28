@@ -34,7 +34,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UserCreate() {
   const classes = useStyles();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [date, setDate] = useState();
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState("");
+  const handleDateChange = (date) => {
+    setDate(date);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     var data = {
@@ -53,18 +61,10 @@ export default function UserCreate() {
     })
       .then((res) => res.json())
       .then((result) => {
-        alert(result["message"]);
         navigate("/");
       });
   };
 
-  const [name, setName] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [quantity, setQuantity] = useState("");
-  const [price, setPrice] = useState("");
-  const handleDateChange = (date) => {
-    setDate(date);
-  };
   return (
     <Container maxWidth="xs">
       <div className={classes.paper}>

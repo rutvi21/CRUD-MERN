@@ -63,7 +63,7 @@ export default function UserList() {
     })
       .then((res) => res.json())
       .then((result) => {
-        alert(result["message"]);
+        alert("Do you want to delete " + result["msg"]["name"]);
         SalesGet();
       });
   };

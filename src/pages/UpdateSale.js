@@ -60,11 +60,6 @@ export default function UserUpdate() {
       date: date,
       quantity: quantity,
       price: price,
-      //   fname: fname,
-      //   lname: lname,
-      //   username: username,
-      //   email: email,
-      //   avatar: avatar,
     };
     fetch("http://localhost:4000/sales/update-sale/" + id, {
       method: "PUT",
